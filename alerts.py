@@ -43,20 +43,18 @@ package_list = [
     'urllib3==1.26.13'
 ]
 
-packages_installed = "Packages Installed: True"
-
 for package_name in package_list:
     try:
         pkg_resources.get_distribution(package_name)
     except pkg_resources.DistributionNotFound:
-        packages_installed = "Packages Installed: False"
+        print(f"Package {package_name} not found. Installing...")
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', package_name])
+    except pkg_resources.VersionConflict:
+        print(f"Version conflict for package {package_name}. Uninstalling existing version and installing required version...")
+        subprocess.check_call([sys.executable, '-m', 'pip', 'uninstall', '-y', package_name])
         subprocess.check_call([sys.executable, '-m', 'pip', 'install', package_name])
 
-if packages_installed:
-    print("All required packages are already installed.")
-else:
-    print("All required packages have been installed.")
-    
+print("All required packages have been installed.")    
     
 # Check if Chromium is installed
 if shutil.which("chromium") is None:
