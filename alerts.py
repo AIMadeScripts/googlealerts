@@ -55,6 +55,7 @@ for package_name in package_list:
         subprocess.check_call([sys.executable, '-m', 'pip', 'install', package_name])
 
 print("All required packages have been installed.")    
+packages_installed = "Packages Installed: True"
     
 # Check if Chromium is installed
 if shutil.which("chromium") is None:
