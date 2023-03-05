@@ -366,13 +366,13 @@ while True:
         print("Please login and seed first.")
         input("Press Enter to continue...")
     elif choice == '6':
-    	print("Writing to feed.txt...")
-    	request_feed()
+        print("Writing to feed.txt...")
+        request_feed()
     elif choice == '7' and (not config_exists or not session_exists):
         print("Please login and seed first.")
         input("Press Enter to continue...")
     elif choice == '7':
-    	print("Writing to feed_dates.txt...")
+        print("Writing to feed_dates.txt...")
         display_feed()
     elif choice == '8' and (not config_exists or not session_exists):
         print("Please login and seed first.")
