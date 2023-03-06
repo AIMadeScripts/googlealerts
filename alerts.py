@@ -294,7 +294,7 @@ while True:
     if os.path.exists('feed.txt'):
         feedexists = "Feed.txt Exists: True"
     else:
-        feedexists = "Feed.txt Exists: False"
+        feedexists = "Feed.txt Exists: \033[91mFalse\033[0m"
     clear_screen()
     config_exists = os.path.exists(os.path.expanduser('~/.config/google_alerts/config.json'))
     session_exists = os.path.exists(os.path.expanduser('~/.config/google_alerts/session'))
@@ -302,15 +302,22 @@ while True:
     # Print the installation and database status
     print(f"{'Installation Status':^50}")
     print_separator()
-    print("User Credentials Supplied:", config_exists)
-    print("Database Seeded:", session_exists)
+    if config_exists:
+        print("User Credentials Supplied:", config_exists)
+    else:
+        print("User Credentials Supplied: \033[91mFalse\033[0m")
+    if session_exists:
+        print("Database Seeded:", session_exists)
+    else:
+        print("Database Seeded: \033[91mFalse\033[0m")
     print(f"{chromedriver}")
     print(f"{chromium_install}")
     print(f"{packages_installed}")
     print(f"{feedexists}")
-    print("Discord Token Added:", discordtoken_exists)
-
-
+    if session_exists:
+        print("Discord Token Added:", discordtoken_exists)
+    else:
+        print("Discord Token Added: \033[91mFalse\033[0m")
 
     print_separator()
     
@@ -408,7 +415,7 @@ while True:
                 os.system('python3 bot.py')
             else:
                 print("Please generate the feed first")
-            feedexists = "Feed.txt Exists: False"
+            feedexists = "Feed.txt Exists: \033[91mFalse\033[0m"
     elif choice == 'exit':
         break
     else:
