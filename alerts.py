@@ -291,9 +291,14 @@ def print_separator():
     print("=" * 50)
 word_count = 0
 while True:
+    if os.path.exists('feed.txt'):
+        feedexists = "Feed.txt Exists: True"
+    else:
+        feedexists = "Feed.txt Exists: False"
     clear_screen()
     config_exists = os.path.exists(os.path.expanduser('~/.config/google_alerts/config.json'))
     session_exists = os.path.exists(os.path.expanduser('~/.config/google_alerts/session'))
+    discordtoken_exists = os.path.exists(os.path.expanduser('~/.config/google_alerts/discordtoken'))
     # Print the installation and database status
     print(f"{'Installation Status':^50}")
     print_separator()
@@ -302,6 +307,9 @@ while True:
     print(f"{chromedriver}")
     print(f"{chromium_install}")
     print(f"{packages_installed}")
+    print(f"{feedexists}")
+    print("Discord Token Added:", discordtoken_exists)
+
 
 
     print_separator()
@@ -330,7 +338,9 @@ while True:
         print("(7) Request feed with formatting")
         print("(8) Add words from file")
         print("(9) Change to Best or All results")
-    print("(10) Exit")
+        print("(10) Add Discord Token")
+        print("(11) Run Discord Bot")
+    print("(exit) Exit")
     print_separator()
     choice = input("Enter your choice: ")
     if choice == '1':
@@ -366,7 +376,7 @@ while True:
         print("Please login and seed first.")
         input("Press Enter to continue...")
     elif choice == '6':
-        print("Writing to feed.txt...")
+        print("Writing to feed.txt, this could take some time...")
         request_feed()
     elif choice == '7' and (not config_exists or not session_exists):
         print("Please login and seed first.")
@@ -384,7 +394,22 @@ while True:
         input("Press Enter to continue...")
     elif choice == '9':
         bestorallresults()
-    elif choice == '10':
+    elif choice == "10":
+        discord_token = input("Enter Discord token: ")
+        config_dir = os.path.expanduser("/tmp/token")
+        if not os.path.exists(config_dir):
+            os.makedirs(config_dir)
+        with open(os.path.join(config_dir, "discordtoken"), "w") as f:
+            f.write(discord_token)
+            print("Discord token saved successfully.")
+    elif choice == '11':
+            if os.path.exists('feed.txt'):
+                feedexists = "Feed.txt Exists: True"
+                os.system('python bot.py')
+            else:
+                print("Please generate the feed first")
+            feedexists = "Feed.txt Exists: False"
+    elif choice == 'exit':
         break
     else:
         print("Invalid choice.")
