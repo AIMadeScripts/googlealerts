@@ -6,6 +6,7 @@ Simply run
 2. ```cd googlealerts```
 3. ```python3 alerts.py```
 4. ```python3 alerts.py```
+
 Just run the script twice so it can find the tools it had to install.
 
 
@@ -15,15 +16,15 @@ Right now you should be able to make a discord bot here:
 https://discord.com/developers/applications/
 Once it is created and added to your server:
 
+If you choose
+1. (11) Run Discord Bot
+2. 3. Run User interaction mode !news word
 
-Create your feed.txt file using the alerts.py then, you can simply run
-```python3 bot.py```
+As long as all the other menu settings were True, it should start the discord bot and login to the server. Now if you type in on discord:
 
-Inside discord now, you can type
-```!post_feed```
+1. ```!news trump```
 
-It will start printing articles to your server from the feed.txt file.
+It will pull all the latest news articles about Trump.
 
 # Todo
-Add a menu option in for automating every x hours the user chooses grabbing the feed then piping it into discord.
-Also set it up in only one channel rather than any channel and only respond to !post_feed.
+Fix it for when spam requests are made by multiple users. I had a temporary solution which relied on creating a new file called news_collection_in_progress at the start of a request, then deleting it when it was done but it was having issues with being deleted. 
