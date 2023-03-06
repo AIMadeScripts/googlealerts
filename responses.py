@@ -1,4 +1,4 @@
-import os
+t os
 import random
 import re
 import subprocess
@@ -8,13 +8,25 @@ from typing import List
 def get_response(message: str) -> List[str]:
     p_message = message.lower()
 
-    if p_message.startswith('!news '):
-        search_term = p_message.split()[1]  # Extract search term from message
+    # Extract search term from message using regular expression
+    match = re.match(r'^!news\s+(.+)$', p_message)
+    if match:
+        search_term = match.group(1)
+
+        # Check if news collection is already running
+        if os.path.exists('news_collection_in_progress'):
+            return ['Sorry, news collection is already in progress. Please wait.']
+
+        # Mark that news collection is in progress
+        with open('news_collection_in_progress', 'w'):
+            pass
+
         try:
             subprocess.run(["google-alerts", "create", "--term", search_term, "--delivery", "rss", "--frequency", "realtime"], check=True)
         except subprocess.CalledProcessError as e:
+            os.remove('news_collection_in_progress')
             return ['Error creating Google Alert: ' + str(e)]
-
+            
         files = []
 
         with open("message.txt", "w") as file:
@@ -70,8 +82,13 @@ def get_response(message: str) -> List[str]:
             with open(f"{articles_dir}/{article}") as file:
                 if file.readable():
                     contents = file.read()
-                    files.append(contents)
-
+                    # Check if the contents of the file contain at least one alphabetical character
+                    if any(char.isalpha() for char in contents):
+                        files.append(contents)
+                    else:
+                        # If the file doesn't contain at least one alphabetical character, remove it
+                        os.remove(f"{articles_dir}/{article}")
+                        
         # Delete each Google Alert using google-alerts delete command
         try:
             result = subprocess.run(["google-alerts", "list"], capture_output=True, text=True, check=True)
@@ -88,6 +105,8 @@ def get_response(message: str) -> List[str]:
                 return ['Error deleting Google Alert: ' + str(e)]
 
         return files
+        # Mark that news collection is finished
+        os.remove('news_collection_in_progress')
 
     else:
         # Return a default response if the command is not recognized
