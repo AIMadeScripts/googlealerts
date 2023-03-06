@@ -405,7 +405,7 @@ while True:
     elif choice == '11':
             if os.path.exists('feed.txt'):
                 feedexists = "Feed.txt Exists: True"
-                os.system('python bot.py')
+                os.system('python3 bot.py')
             else:
                 print("Please generate the feed first")
             feedexists = "Feed.txt Exists: False"
