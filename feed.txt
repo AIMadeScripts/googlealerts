@@ -1,0 +1,87 @@
+My data got leaked in Indigo's ransomware attack: We need better cybersecurity rules
+https://www.theglobeandmail.com/business/commentary/article-employee-data-leak-indigo-ransomware-attack/
+We commiserated over a flurry of messages and group chats, thinking of current Indigo employees working day and night to resolve the breach, and ...
+
+Headteacher leaves after sharing list of striking teachers - NationalWorld
+https://www.nationalworld.com/education/headteacher-quits-after-sharing-list-of-striking-teachers-4051263
+Charlotte Jordan, 45, has left King Edward VI Five Ways Grammar school in Birmingham just months after another alleged data breach involving ...
+
+Nintex names Amit Mathradas chief executive officer - iTWire
+https://itwire.com/guest-articles/company-news/nintex-names-amit-mathradas-chief-executive-officer.html
+GUEST RESEARCH: Telstra Ventures' latest Emerging Tech Hub report discloses… Tenable Research Reveals APAC at the Epicentre of Global Data Breach ...
+
+How to avoid billion-dollar fines due to unsecured messaging apps - VentureBeat
+https://venturebeat.com/security/how-to-avoid-billion-dollar-fines-due-to-unsecured-messaging-apps/
+And with the rise in remote and hybrid work environments and the adoption of bring-your-own-device (BYOD) practices in the workplace, data breaches ...
+
+Billions of Health Care Dollars at Risk Due to Weak Security in Remote Patient Monitoring
+https://www.businesswire.com/news/home/20230305005047/en/Billions-of-Health-Care-Dollars-at-Risk-Due-to-Weak-Security-in-Remote-Patient-Monitoring
+... emerging data security threats from overseas monitoring device vendors and the associated costs of exposing patient data to security breaches.
+
+Digi Yatra: Speedy check-in or hassle-free surveillance? - The Leaflet
+https://theleaflet.in/digi-yatra-speedy-check-in-or-hassle-free-surveillance/
+Data holds significant value in the market, and a data breach or sale has obvious repercussions. India's experience with data security has not been ...
+
+Kieron Pollard reprimanded for HBL PSL Code on Conduct breach - Cricket World
+https://www.cricketworld.com/kieron-pollard-reprimanded-for-hbl-psl-code-on-conduct-breach/85680.htm
+Multan Sultans all-rounder Kieron Pollard has been reprimanded for a level 1 breach of the HBL PSL Code of Conduct for Players and Player Support ...
+
+Concerning technology breach hits Rio Tinto as private staff communications ... - The West Australian
+https://thewest.com.au/business/mining/concerning-technology-breach-hits-rio-tinto-as-private-staff-communications-exposed-through-dash-cams-c-9944996
+The company added: “Rio Tinto is working with the provider to investigate the matter and currently does not believe any data from these cameras has ...
+
+Australia to overhaul cyber security laws: the legal implications coming down the line
+https://lsj.com.au/articles/australia-to-overhaul-cyber-security-laws-the-legal-implications-coming-down-the-line/
+The Federal Government plans to overhaul the country's cybersecurity agenda in the wake of last year's disastrous data breaches on Optus and ...
+
+School cybersecurity in 2023: What's your incident response plan? - The Educator Online
+https://www.theeducatoronline.com/k12/news/school-cybersecurity-in-2023-whats-your-incident-response-plan/282047
+Education institutions faced the highest data encryption rate (73%) compared to other ... “This ensures that if a data breach ever does occur, ...
+
+Gallant Challenge aims to breach €500K mark in 2023 - Anglo Celt
+https://www.anglocelt.ie/2023/03/05/gallant-challenge-aims-to-breach-e500k-mark-in-2023/
+A Cornafean man who raised €34000 for a sponsored walk in aid of St Christopher's Hospice in Cavan has paid tribute to the people of Cavan for ...
+
+You won't believe how much money hackers get from stealing your data - Vigour Times
+https://vigourtimes.com/you-wont-believe-how-much-money-hackers-get-from-stealing-your-data/
+How do I prevent this from happening to me? Antivirus protection. The best way to protect yourself from having your data breached is to have antivirus ...
+
+These 'Fun' and 'Harmless' Social Media Quizzes Can Make You Easy Prey to Hackers
+https://fij.ng/article/these-fun-and-harmless-social-media-quizzes-can-make-you-easy-prey-to-hackers/
+More recently, in 2022, Verizon, in its Data Breach Investigations Report, also disclosed that 82% of cyber breaches were caused by human errors.
+
+How to Reduce Security Risks Posed by Cloud Identities? - TechEconomy
+https://techeconomy.ng/how-to-reduce-security-risks-posed-by-cloud-identities/
+Some 45% of those breaches happened with cloudbased infrastructures, while 80% involved privilege abuse. And privilege abuse begins with attacks on ...
+
+Week in review: LastPass breach, GCP data exfiltration, UEFI bootkit - Help Net Security
+https://www.helpnetsecurity.com/2023/03/05/week-in-review-lastpass-breach-gcp-data-exfiltration-uefi-bootkit/
+Here's an overview of some of last week's most interesting news, articles, interviews and videos: Google Cloud Platform allows data exfiltration ...
+
+Australian National Maritime Museum hit by alleged 'trusted insider' attack - iTnews
+https://www.itnews.com.au/news/australian-national-maritime-museum-hit-by-alleged-trusted-insider-attack-591640
+... resulting in the man allegedly using credit card information to make a ... Australian orgs lodged 497 data breach notices in back half of 2022.
+
+LastPass breach could've been able to stop a 3-year-old Plex update - Research Snipers
+https://researchsnipers.com/lastpass-breach-couldve-been-able-to-stop-a-3-year-old-plex-update/
+This occurred after investigating two high-level data breaches in the previous year. We have gotten a detailed report on the second incident ...
+
+Possible data protection violation when using VirusTotal Page 1 of 0 - breakinglatest.news
+https://www.breakinglatest.news/business/possible-data-protection-violation-when-using-virustotal-page-1-of-0/
+What is the problem or data breach when using VirusTotal? If files with personal data are uploaded or checked, there is usually an order ...
+
+IT Security News Daily Summary 2023-03-05
+https://www.itsecuritynews.info/it-security-news-daily-summary-2023-03-05/
+Week in review: LastPass breach, GCP data exfiltration, UEFI bootkit &middot; Cyberattack on British Retailer WH Smith Exposes Employees` Data.
+
+Week in review: LastPass breach, GCP data exfiltration, UEFI bootkit - Help Net Security
+https://www.helpnetsecurity.com/2023/03/05/week-in-review-lastpass-breach-gcp-data-exfiltration-uefi-bootkit/
+Here's an overview of some of last week's most interesting news, articles, interviews and videos: Google Cloud Platform allows data exfiltration ...
+
+Sodium-Ion Battery for Stationary Energy Storage Market Regional Overview 2023-2028
+https://www.digitaljournal.com/pr/news/sodium-ion-battery-for-stationary-energy-storage-market-regional-overview-2023-2028-size-and-share-estimation-revenue-business-prospect-growth-opportunity-challenges-potential-benefits-till-2028
+It precisely gives the necessary data and its state of the art investigation to help figure out the ideal business ... Data Exfiltration Market.
+
+Global Population Health Management Market Growth Statistics 2023 - Digital Journal
+https://www.digitaljournal.com/pr/news/global-population-health-management-market-growth-statistics-2023-competitive-landscape-restraining-factors-market-concentration-rate-development-status-and-growth-by-forecast-2027
+The goal of the PHM solution is to enable data-driven healthcare at the ... Global Data Exfiltration Market analysis by Top Leading Player ...
