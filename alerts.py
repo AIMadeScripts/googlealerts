@@ -6,6 +6,7 @@ import zipfile
 import shutil
 import sys
 import pkg_resources
+import feedparser
 
 if os.geteuid() == 0:
     print("This script should not be run as root (i.e., with sudo). Please run the script as a non-root user.")
