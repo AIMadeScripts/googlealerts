@@ -406,8 +406,7 @@ while True:
         if word_choice == '1':
             add_words()
         elif word_choice == '2':
-            word = input("Enter the word to add: ")
-            command = f'google-alerts create --term "{word}" --delivery \'rss\' --frequency \'realtime\' >/dev/null 2>&1'
+            monitor_word()
         else:
             print("Invalid choice. Please choose again.")
     elif choice == '9' and (not config_exists or not session_exists):
