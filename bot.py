@@ -87,8 +87,8 @@ async def send_message(message, user_message, is_private):
 def main():
     print("What do you want to do?")
     print("1. Request a new feed now.")
-    print("2. Automate a feed request every hour.")
-    print("3. Run with the current feed.")
+    print("2. Automate a feed request every hour. Doesn't print to discord")
+    print("3. Run User interaction mode !news word")
     choice = input("Enter your choice: ")
 
     if choice == '1':
