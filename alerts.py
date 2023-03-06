@@ -432,7 +432,6 @@ while True:
             else:
                 print("Please generate the feed first")
             feedexists = "Feed.txt Exists: \033[91mFalse\033[0m"
-    elif choice == 'exit':
     elif choice == '12':
                 os.system('python3 requestbot.py')
     elif choice == 'exit':        
