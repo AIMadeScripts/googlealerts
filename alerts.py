@@ -353,7 +353,14 @@ while True:
     if choice == '1':
         enter_credentials()
     elif choice == '2':
-        seed_database()
+        captcha_choice = input("Choose an option:\n1. No captcha\n2. Has captcha\n")
+        if captcha_choice == '1':
+            seed_database()
+        elif captcha_choice == '2':
+            # Replace the arguments below with the appropriate values for your system
+            os.system("python3 captchaproblem.py seed --driver /tmp/chromedriver/chromedriver --timeout 60")
+        else:
+        print("Invalid choice. Please choose again.")
     elif choice == '3' and (not config_exists or not session_exists):
         print("Please login and seed the database first.")
         input("Press Enter to continue...")
