@@ -93,20 +93,26 @@ def main():
 
     if choice == '1':
         request_feed()
+        os.system('python3 split.py')
     elif choice == '2':
         # Start a separate thread to run the request_feed() function every hour
         feed_thread = threading.Thread(target=run_request_feed, daemon=True)
         feed_thread.start()
     elif choice == '3':
+        os.system('python3 split.py')
         pass
     else:
         print("Invalid choice.")
-
+        sys.exit()
     run_discord_bot()
 
 def run_request_feed():
     while True:
         request_feed()
-        time.sleep(3600) # wait for an hour
+        while not os.path.exists('feed.txt'):
+            time.sleep(1)
+        os.system('python3 split.py')
+        time.sleep(3599) # wait for an hour minus 1 second
+
 if __name__ == '__main__':
     main()
