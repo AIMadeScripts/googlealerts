@@ -4,11 +4,9 @@ Manager for Google Alerts
 Simply run
 1. ```git clone https://github.com/AIMadeScripts/googlealerts.git```
 2. ```cd googlealerts```
-3. ```pip install feedparser```
-4. ```pip install discord```
-5. ```python3 alerts.py```
-
-In some circumstances, You will need to run the script twice. This is because the script will automatically install the packages it requires itself, but then can't call on them straight away or automatically restart the script. 
+3. ```python3 alerts.py```
+4. ```python3 alerts.py```
+Just run the script twice so it can find the tools it had to install.
 
 
 ![Alt Text](https://i.imgur.com/B4WyfDH.gif)
