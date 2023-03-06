@@ -1,4 +1,3 @@
-import os
 import re
 import subprocess
 import urllib.request
@@ -6,6 +5,7 @@ import zipfile
 import shutil
 import sys
 import pkg_resources
+import os
 
 if os.geteuid() == 0:
     print("This script should not be run as root (i.e., with sudo). Please run the script as a non-root user.")
@@ -361,7 +361,7 @@ while True:
             seed_database()
         elif captcha_choice == '2':
             # Replace the arguments below with the appropriate values for your system
-            os.system("python3 captchaproblem.py seed --driver /tmp/chromedriver/chromedriver --timeout 60")
+            os.system("python3 scripts/captchaproblem.py seed --driver /tmp/chromedriver/chromedriver --timeout 60")
         else:
             print("Invalid choice. Please choose again.")
     elif choice == '3' and (not config_exists or not session_exists):
@@ -426,9 +426,10 @@ while True:
             f.write(discord_token)
             print("Discord token saved successfully.")
     elif choice == '11':
-                os.system('python3 bot.py')
+                os.system('rm news_collection_in_progress')
+                os.system('python3 scripts/bot.py')
     elif choice == '12':
-                os.system('python3 requestbot.py')
+                os.system('python3 scripts/requestbot.py')
     elif choice == 'exit':        
         break
     else:
