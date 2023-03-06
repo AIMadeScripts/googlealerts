@@ -396,7 +396,7 @@ while True:
         bestorallresults()
     elif choice == "10":
         discord_token = input("Enter Discord token: ")
-        config_dir = os.path.expanduser("/tmp/token")
+        config_dir = os.path.expanduser("~/.config/google_alerts")
         if not os.path.exists(config_dir):
             os.makedirs(config_dir)
         with open(os.path.join(config_dir, "discordtoken"), "w") as f:
