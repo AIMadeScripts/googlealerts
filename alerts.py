@@ -426,7 +426,6 @@ while True:
             f.write(discord_token)
             print("Discord token saved successfully.")
     elif choice == '11':
-                os.system('rm news_collection_in_progress')
                 os.system('python3 scripts/bot.py')
     elif choice == '12':
                 os.system('python3 scripts/requestbot.py')
