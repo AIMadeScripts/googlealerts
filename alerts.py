@@ -426,12 +426,7 @@ while True:
             f.write(discord_token)
             print("Discord token saved successfully.")
     elif choice == '11':
-            if os.path.exists('feed.txt'):
-                feedexists = "Feed.txt Exists: True"
                 os.system('python3 bot.py')
-            else:
-                print("Please generate the feed first")
-            feedexists = "Feed.txt Exists: \033[91mFalse\033[0m"
     elif choice == '12':
                 os.system('python3 requestbot.py')
     elif choice == 'exit':        
