@@ -402,7 +402,14 @@ while True:
         print("Please login and seed first.")
         input("Press Enter to continue...")
     elif choice == '8':
-        add_words()
+        word_choice = input("Choose an option:\n1. From a wordlist\n2. Individual word\n")
+        if word_choice == '1':
+            add_words()
+        elif word_choice == '2':
+            word = input("Enter the word to add: ")
+            command = f'google-alerts create --term "{word}" --delivery \'rss\' --frequency \'realtime\' >/dev/null 2>&1'
+        else:
+            print("Invalid choice. Please choose again.")
     elif choice == '9' and (not config_exists or not session_exists):
         print("Please login and seed first.")
         input("Press Enter to continue...")
