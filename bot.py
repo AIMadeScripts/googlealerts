@@ -1,50 +1,40 @@
-import discord
-import responses
-import asyncio
 import os
-import sys
+import subprocess
+import re
+import time
+import feedparser
+import discord
 import shutil
+import asyncio
+import responses
+import threading
 
-# check if feed.txt file exists
-if not os.path.exists('feed.txt'):
-    print('feed.txt file not found')
-    sys.exit()
+def request_feed():
+    # Remove the file if it already exists
+    if os.path.exists("feed.txt"):
+        os.remove("feed.txt")
 
-# remove the articles folder if it already exists
-if os.path.exists('articles'):
-    shutil.rmtree('articles')
+    # Open the file in append mode
+    with open("feed.txt", "a") as f:
+        # Run the google-alerts list command and capture its output
+        result = subprocess.run(["google-alerts", "list"], capture_output=True, text=True)
 
-# create a folder to store the articles
-os.makedirs('articles')
+        # Extract the RSS links from the output using regular expressions
+        rss_links = re.findall(r"rss_link\": \"(.*?)\"", result.stdout)
 
-# read the feed.txt file
-with open('feed.txt', 'r') as f:
-    # split the file contents into articles
-    articles = f.read().split('\n\n')
+        # Process each RSS link
+        for url in rss_links:
+            feed = feedparser.parse(url)
 
-    # iterate over each article and save it to a file
-    for i, article in enumerate(articles):
-        # create a new file for the article
-        filename = f'articles/{i+1}.txt'
-        with open(filename, 'w') as article_file:
-            # add ``` to the start of the file
-            article_file.write('```\n')
-            # write the article to the file
-            article_file.write(article)
-            # add ``` to the end of the file
-            article_file.write('\n```')
+            for entry in feed.entries:
+                title = entry.title.replace("<b>", "").replace("</b>", "")
+                summary = entry.summary.replace("<b>", "").replace("</b>", "").replace("&nbsp;", " ")
+                link = re.search(r"url=(.*?)&ct", entry.link).group(1)
 
-
-async def send_message(message, user_message, is_private):
-    try:
-        response = responses.get_response(user_message)
-        for article in response:
-            await message.author.send(article) if is_private else await message.channel.send(article)
-            await asyncio.sleep(2) # sleep for 2 seconds between sending each article
-
-    except Exception as e:
-        print(e)
-
+                # Write the feed content to the file
+                f.write(f"{title}\n")
+                f.write(f"{link}\n")
+                f.write(f"{summary}\n\n")
 
 def run_discord_bot():
     # read the token from file
@@ -84,5 +74,39 @@ def run_discord_bot():
 
     client.run(TOKEN)
 
-if __name__ == '__main__':
+async def send_message(message, user_message, is_private):
+    try:
+        response = responses.get_response(user_message)
+        for article in response:
+            await message.author.send(article) if is_private else await message.channel.send(article)
+            await asyncio.sleep(2) # sleep for 2 seconds between sending each article
+
+    except Exception as e:
+        print(e)
+
+def main():
+    print("What do you want to do?")
+    print("1. Request a new feed now.")
+    print("2. Automate a feed request every hour.")
+    print("3. Run with the current feed.")
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        request_feed()
+    elif choice == '2':
+        # Start a separate thread to run the request_feed() function every hour
+        feed_thread = threading.Thread(target=run_request_feed, daemon=True)
+        feed_thread.start()
+    elif choice == '3':
+        pass
+    else:
+        print("Invalid choice.")
+
     run_discord_bot()
+
+def run_request_feed():
+    while True:
+        request_feed()
+        time.sleep(3600) # wait for an hour
+if __name__ == '__main__':
+    main()
