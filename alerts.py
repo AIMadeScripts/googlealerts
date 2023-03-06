@@ -360,7 +360,7 @@ while True:
             # Replace the arguments below with the appropriate values for your system
             os.system("python3 captchaproblem.py seed --driver /tmp/chromedriver/chromedriver --timeout 60")
         else:
-        print("Invalid choice. Please choose again.")
+            print("Invalid choice. Please choose again.")
     elif choice == '3' and (not config_exists or not session_exists):
         print("Please login and seed the database first.")
         input("Press Enter to continue...")
