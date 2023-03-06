@@ -47,7 +47,16 @@ async def send_message(message, user_message, is_private):
 
 
 def run_discord_bot():
-    TOKEN = 'YOURTOKENHERE'
+    # read the token from file
+    token_file = os.path.expanduser('~/.config/google_alerts/discordtoken')
+    if not os.path.exists(token_file):
+        TOKEN = input("Please enter your Discord bot token: ")
+        with open(token_file, 'w') as f:
+            f.write(TOKEN)
+    else:
+        with open(token_file, 'r') as f:
+            TOKEN = f.read().strip()
+
     intents = discord.Intents.default()
     intents.message_content = True
     client = discord.Client(intents=intents)
