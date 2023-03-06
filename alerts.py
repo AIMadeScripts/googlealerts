@@ -6,7 +6,6 @@ import zipfile
 import shutil
 import sys
 import pkg_resources
-import feedparser
 
 if os.geteuid() == 0:
     print("This script should not be run as root (i.e., with sudo). Please run the script as a non-root user.")
@@ -41,6 +40,7 @@ package_list = [
     'sphinxcontrib-websupport==1.0.1',
     'tqdm==4.64.1',
     'twine==1.11.0',
+    'discord',
     'urllib3==1.26.13'
 ]
 
@@ -57,7 +57,10 @@ for package_name in package_list:
 
 print("All required packages have been installed.")    
 packages_installed = "Packages Installed: True"
-    
+import feedparser
+import discord
+
+
 # Check if Chromium is installed
 if shutil.which("chromium") is None:
     print("Chromium is not installed. Installing Chromium...")
